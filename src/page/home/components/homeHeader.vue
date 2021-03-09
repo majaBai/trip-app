@@ -44,18 +44,20 @@ export default {
     box-shadow: 0 0 0.01rem 0.02rem #005
     height: 0.6rem
     line-height: 0.6rem
-
   .header-city
     // background-color: red
     float: right
     width: 1.4rem
+
 .horizontal-align
   display: inline-flex
   align-items: center
+
 .van-icon.van-icon-arrow-left
   font-size: 17px
   top: 0.08rem
   margin-right: 2px
+
 .van-icon.van-icon-arrow-down
   margin-left: 2px
 </style>
