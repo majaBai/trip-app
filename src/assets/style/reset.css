@@ -70,12 +70,12 @@ a,ins,s,u,del{
 sup,sub{
     vertical-align:baseline
 }
-/* html {
+html {
     overflow-x: hidden;
     height: 100%;
     font-size: 50px;
     -webkit-tap-highlight-color: transparent;
-} */
+}
 body {
     font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
     color: #333;
