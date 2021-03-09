@@ -6,8 +6,12 @@ import "@/assets/style/reset.css"
 import FastClick from 'fastclick'
 import 'vant/lib/index.css';
 import Vant from 'vant';
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+// import 'swiper/dist/css/swiper.css'
 
 Vue.use(Vant);
+Vue.use(VueAwesomeSwiper)
 
 FastClick.attach(document.body);
 

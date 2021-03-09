@@ -41,7 +41,7 @@ export default {
     margin-right: 0.1rem
     margin-top: 0.13rem
     // border: solid 0.01rem gray
-    box-shadow: 0 0 0.01rem 0.02rem #005
+    box-shadow: 0 0 0.01rem 0.02rem #ccc
     height: 0.6rem
     line-height: 0.6rem
   .header-city
