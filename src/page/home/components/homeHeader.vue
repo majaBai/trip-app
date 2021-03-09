@@ -1,15 +1,14 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <div class="test">home header</div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  components: {},
+  name: "homeHeader",
 };
 </script>
 
 <style lang='sass' scoped>
+.test
+  color: red
 </style>
