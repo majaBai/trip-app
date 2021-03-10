@@ -17,13 +17,17 @@ export default {
       swiperImg: [
         {
           id: "001",
-          url:
-            "https://pic5.40017.cn/02/000/ab/5c/rBLkCFrYQiGAVGX8AAMK2OFqY_8075_420x145_00.jpg",
+          url: "https://pic5.40017.cn/i/ori/SFVDIalLHy.jpg",
         },
         {
           id: "002",
           url:
             "https://pic5.40017.cn/02/000/6e/62/rBLkCVqwih-AWtVsAAEDYNuPT8s074_420x145_00.jpg",
+        },
+        {
+          id: "003",
+          url:
+            "https://pic5.40017.cn/02/000/ab/5c/rBLkCFrYQiGAVGX8AAMK2OFqY_8075_420x145_00.jpg",
         },
       ],
       swiperOptions: {
@@ -49,5 +53,6 @@ export default {
   --swiper-theme-color: #fff
 .swiper-img
   width: 100%
+  height: 125px
 </style>
 

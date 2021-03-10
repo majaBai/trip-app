@@ -5,6 +5,7 @@
     <home-swiper></home-swiper>
     <home-catalog class="home-catalog"></home-catalog>
     <home-hot class="home-hot"></home-hot>
+    <home-weekend class="home-weekend"></home-weekend>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import homeHeader from "./components/homeHeader.vue";
 import homeSwiper from "./components/homeSwiper.vue";
 import homeCatalog from "./components/homeCatalog.vue";
 import homeHot from "./components/homeHot.vue";
+import homeWeekend from "./components/homeWeekend.vue";
 export default {
   name: "Home",
   components: {
@@ -20,6 +22,7 @@ export default {
     homeSwiper,
     homeCatalog,
     homeHot,
+    homeWeekend,
   },
 };
 </script>
@@ -33,6 +36,4 @@ export default {
     width: 100%
   .home-catalog
     padding-bottom: 10px
-  // .home-hot
-  //   margin-top: 10px
 </style>
