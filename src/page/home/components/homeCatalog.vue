@@ -10,11 +10,8 @@
     </div>
     <div class="recommendation">
       <ul>
-        <li>
-          <img src="https://pic5.40017.cn/i/ori/NnlrqWinvi.jpg" alt="" />
-        </li>
-        <li>
-          <img src="https://pic5.40017.cn/i/ori/Oda2C2cnK0.jpg" alt="" />
+        <li v-for="item in recommendationList" :key="item.id">
+          <img :src="item.url" alt="" />
         </li>
       </ul>
     </div>
@@ -52,6 +49,16 @@ export default {
           id: "004",
         },
       ],
+      recommendationList: [
+        {
+          url: "https://pic5.40017.cn/i/ori/NnlrqWinvi.jpg",
+          id: "r-001",
+        },
+        {
+          url: "https://pic5.40017.cn/i/ori/Oda2C2cnK0.jpg",
+          id: "r-002",
+        },
+      ],
     };
   },
 };
@@ -80,11 +87,21 @@ export default {
     padding: 0px 10px
     ul
         width: 100%
+        &::before
+            display: table
+            content: " "
+            clear: both
+        &::after
+            display: table
+            content: " "
+            clear: both
         li
-            // width: 50%
             width: calc(50% - 10px)
             float: left
             margin: 0px 5px
+            &::after
+                display: table
+                content: " "
             img
                 width: 100%
                 border-radius: 0.1rem

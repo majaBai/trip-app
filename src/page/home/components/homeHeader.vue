@@ -6,7 +6,7 @@
     <div class="header-search">
       <span class="horizontal-align">
         <van-icon name="search" />
-        上海海洋公园
+        目的地/关键词
       </span>
     </div>
     <div class="header-city">
