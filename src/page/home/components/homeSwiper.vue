@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide v-for="item in headerImg" :key="item.id">
+      <swiper-slide v-for="item in swiperImg" :key="item.id">
         <img class="swiper-img" alt="" :src="item.url" />
       </swiper-slide>
       <div class="swiper-pagination pagination-color" slot="pagination"></div>
@@ -14,7 +14,7 @@ export default {
   name: "homeSwiper",
   data() {
     return {
-      headerImg: [
+      swiperImg: [
         {
           id: "001",
           url:
@@ -46,8 +46,8 @@ export default {
 
 <style lang='sass' scoped>
 .wrapper
-    --swiper-theme-color: #fff
+  --swiper-theme-color: #fff
 .swiper-img
-    width: 100%
+  width: 100%
 </style>
 

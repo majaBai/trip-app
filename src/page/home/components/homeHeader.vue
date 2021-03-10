@@ -44,6 +44,7 @@ export default {
     box-shadow: 0 0 0.01rem 0.02rem #ccc
     height: 0.6rem
     line-height: 0.6rem
+    background: white
   .header-city
     // background-color: red
     float: right
