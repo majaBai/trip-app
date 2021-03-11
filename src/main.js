@@ -9,9 +9,11 @@ import Vant from 'vant';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 // import 'swiper/dist/css/swiper.css'
+import axios from 'axios'
 
 Vue.use(Vant);
 Vue.use(VueAwesomeSwiper)
+Vue.prototype.$axios = axios
 
 FastClick.attach(document.body);
 

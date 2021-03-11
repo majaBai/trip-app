@@ -31,30 +31,42 @@ export default {
       projectList: [
         {
           img:
-            "https://dimg01.c-ctrip.com/images/fd/tg/g3/M01/06/7D/CggYG1aONeKAPC1IAB6njDjLgiA931_C_750_375.jpg",
+            "https://pic3.40017.cn/zzy/rimage/2015/04/18/17/hETxTo_420x228_00.jpg",
           comment: "1175点评 98%满意度",
-          desc: "6日游超人气产品！网红酒店强烈建议早订！",
+          desc: "上海崇明东平国家森林公园房车1晚+森林公园门票2张+双人早餐",
           distance: "酒店距离景点1.79km",
           prise: "299",
           id: "001",
         },
         {
           img:
-            "https://dimg05.c-ctrip.com/images/100f180000013p2c086E4_C_750_375.jpg",
+            "https://pic5.40017.cn/02/000/02/22/rBLkCVlkdDqAP4NzAAMCZSYX5mY633_420x228_00.jpg",
           comment: "975点评 97%满意度",
-          desc: "星级酒店随心住！下单立减300+迎春礼物！",
+          desc:
+            "无锡拈花客栈1晚，游拈花湾，自选酒店自助晚餐/禅食餐【灵山胜境】【亲子精选】",
           distance: "酒店距离景点2.79km",
           prise: "499",
           id: "002",
         },
         {
           img:
-            "https://dimg07.c-ctrip.com/images/100e0h0000008rp39A12F_C_750_375.jpg",
-          comment: "970点评 97%满意度",
-          desc: "星级酒店随心住！下单立减300+迎春礼物！",
+            "https://pic3.40017.cn/zzy/rimage/2015/03/17/11/506Nl6_420x228_00.jpg",
+          comment: "18点评  100%满意度",
+          desc:
+            "【引爆双早双晚399】扬州中集格兰云天大酒店+自选瘦西湖/个园/瘦西湖温泉+双人早餐",
           distance: "酒店距离景点2.00km",
-          prise: "399",
+          prise: "269",
           id: "003",
+        },
+        {
+          img:
+            "https://pic3.40017.cn/zzy/rimage/2015/03/26/20/qLpvQc_420x228_00.jpg",
+          comment: "975点评 97%满意度",
+          desc:
+            "住宋城千古情主题酒店（杭州西湖店），自选杭州宋城千古情景区，预订套餐包含贵宾席演出票！",
+          distance: "酒店距离景点2.79km",
+          prise: "399",
+          id: "004",
         },
       ],
       // 滚动时让title固定悬浮在屏幕顶部

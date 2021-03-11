@@ -27,6 +27,14 @@ export default {
     homeWeekend,
     homeGuess,
   },
+  methods: {
+    getInitData(res) {
+      console.log("res", res);
+    },
+  },
+  created() {
+    this.$axios.get("/api/index.json").then(this.getInitData);
+  },
 };
 </script>
 
