@@ -54,6 +54,7 @@ export default {
   line-height: 0.88rem
   text-align: center
   display: flex
+  width: 100%
   .header-back
     // background-color: red
     float: left

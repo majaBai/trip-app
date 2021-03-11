@@ -82,6 +82,7 @@ export default {
 <style lang='sass' scoped>
 .home-guess
     background: white
+    padding-bottom: 0.4rem
     .fixedDuringScroll
         background-color: white
         z-index: 200

@@ -34,9 +34,9 @@ export default {
 .home
   position: relative
   .home-header
-    position: absolute
-    z-index: 100
-    width: 100%
+    // position: absolute
+    // z-index: 100
+    // width: 100%
   .home-catalog
     padding-bottom: 10px
 </style>
