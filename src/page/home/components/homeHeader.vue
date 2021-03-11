@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ fixedDuringScroll: fixedDuringScroll }">
     <div class="header-back">
       <van-icon name="arrow-left" />
     </div>
-    <div class="header-search">
+    <div class="header-search" :class="{ searchColor: fixedDuringScroll }">
       <span class="horizontal-align">
         <van-icon name="search" />
         目的地/关键词
@@ -21,10 +21,35 @@
 <script>
 export default {
   name: "homeHeader",
+  data() {
+    return {
+      fixedDuringScroll: false,
+    };
+  },
+  methods: {
+    watchScroll() {
+      let topHeight = document.documentElement.scrollTop;
+      console.log(topHeight);
+      if (topHeight > 10) {
+        this.fixedDuringScroll = true;
+      } else {
+        console.log("清空");
+        this.fixedDuringScroll = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.watchScroll);
+  },
 };
 </script>
 
 <style lang='sass' scoped>
+.fixedDuringScroll
+  background-color: white
+  z-index: 200
+  position: fixed
+  top: 0px
 .header
   line-height: 0.88rem
   text-align: center
@@ -45,6 +70,9 @@ export default {
     height: 0.6rem
     line-height: 0.6rem
     background: white
+  .searchColor
+    background: #eee
+    color: #545252bd
   .header-city
     // background-color: red
     float: right

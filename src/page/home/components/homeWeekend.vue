@@ -48,7 +48,7 @@ export default {
           id: "002",
           img: "http://pic5.40017.cn/i/ori/SF1daBTsuQ_450x250_00.jpg.webp",
           title: "深圳西冲",
-          desc: "游艇冲浪 徒步沙滩",
+          desc: "冲浪/徒步沙滩",
         },
         {
           id: "003",
@@ -71,36 +71,36 @@ export default {
 
 <style lang='sass' scoped>
 .home-weekend
-    background-color: white
-    width: 100%
-    padding-bottom: 0.2rem
-    border-bottom: 0.2rem solid #eee
-    .weekend-title
+  background-color: white
+  width: 100%
+  padding-bottom: 0.2rem
+  border-bottom: 0.2rem solid #eee
+  .weekend-title
+    text-align: center
+    padding: 0.2rem 0.1rem
+    color: gray
+    .title
+      font-weight: bold
+      color: black
+      .slogan
+        font-size: 14px
+        margin-top: 5px
+  .weekend-item
+    .slide-box
+      border: 1px solid rgba(128 128 128 / 20%)
+      padding-bottom: 0.05rem
+      .swiper-img
+        max-width: 100%
+      .swiper-desc
         text-align: center
-        padding: 0.2rem 0.1rem
-        color: gray
-        .title
-            font-weight: bold
-            color: black
-        .slogan
-            font-size: 14px
-            margin-top: 5px
-    .weekend-item
-        swiper-slide
-        .slide-box
-            border: 1px solid #8080803b
-        .swiper-img
-            max-width: 100%
-        .swiper-desc
-            text-align: center
-            .swiper-desc-title
-                margin-top: 0.3rem
-                margin-bottom: 0.2rem
-                font-weight: bold
-            .swiper-desc-txt
-                font-size: 12px
-                margin-bottom: 0.2rem
-                color: gray
+        .swiper-desc-title
+          margin-top: 0.3rem
+          margin-bottom: 0.2rem
+          font-weight: bold
+          .swiper-desc-txt
+            font-size: 12px
+            margin-bottom: 0.2rem
+            color: gray
 </style>
 
 <style>
