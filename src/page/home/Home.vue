@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <!-- <div>Home page</div> -->
-    <home-header class="home-header"></home-header>
-    <home-swiper></home-swiper>
-    <home-catalog class="home-catalog"></home-catalog>
-    <home-hot class="home-hot"></home-hot>
-    <home-weekend class="home-weekend"></home-weekend>
-    <home-guess></home-guess>
+    <home-header :city="city" class="home-header"></home-header>
+    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-catalog class="home-catalog" :catalogList="catalogList" :recommendationList="recommendationList"></home-catalog>
+    <home-hot class="home-hot" :flashSaleList="flashSaleList" :hotList="hotList"></home-hot>
+    <home-weekend class="home-weekend" :weekendList="weekendList"></home-weekend>
+    <home-guess :guessList="guessList"></home-guess>
   </div>
 </template>
 
@@ -27,13 +27,34 @@ export default {
     homeWeekend,
     homeGuess,
   },
+  data(){
+    return{
+      city:'',
+      swiperList:[],
+      catalogList:[],
+      recommendationList:[],
+      flashSaleList:[],
+      hotList:[],
+      weekendList:[],
+      guessList:[],
+    }
+  },
   methods: {
     getInitData(res) {
-      console.log("res", res);
+      console.log("res", res.data.data);
+      let data = res.data.data
+      this.city = data.city
+      this.swiperList = data.swiperList
+      this.catalogList = data.catalogList
+      this.recommendationList = data.recommendationList
+      this.flashSaleList = data.flashSaleList
+      this.hotList = data.hotList
+      this.weekendList = data.weekendList
+      this.guessList = data.guessList
     },
   },
   created() {
-    this.$axios.get("/api/index.json").then(this.getInitData);
+    this.$axios.get("/api/init").then(this.getInitData);
   },
 };
 </script>
@@ -41,10 +62,6 @@ export default {
 <style lang='sass' scoped>
 .home
   position: relative
-  .home-header
-    // position: absolute
-    // z-index: 100
-    // width: 100%
   .home-catalog
     padding-bottom: 10px
 </style>

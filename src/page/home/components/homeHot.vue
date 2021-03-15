@@ -1,6 +1,7 @@
 <template>
   <div class="home-hot">
     <div class="left">
+      <div v-for="item in flashSaleList" :key='item.id'>
       <div class="left-title">
         <div class="limit">限时抢购</div>
         <div class="end-time">
@@ -12,29 +13,30 @@
       <div class="left-content">
         <div class="left-content-img">
           <img
-            src="http://pic4.40017.cn/shortTour/2016/05/23/11/anXByp_200x200_00.jpg"
+            :src="item.img"
             alt=""
           />
         </div>
         <div class="img-desc">
-          同程推荐+韶山+含环保车+花明楼+毛泽东纪念馆1日跟团同程推荐+韶山+含环保车+花明楼+毛泽东纪念馆1日跟团游同程推荐+韶山+含环保车+花明楼+毛泽东纪念馆1日跟团游
+        {{item.desc}}
         </div>
       </div>
       <div class="left-footer">
-        <div class="goods-count">仅限<span>100份</span></div>
+        <div class="goods-count">仅限<span>{{item.num}}份</span></div>
         <div class="goods-prise">
           <span class="currency-unit">￥</span>
-          <span class="currency-count">299</span>
+          <span class="currency-count">{{item.prise}}</span>
           <span class="discount-txt">起</span>
         </div>
+      </div>
       </div>
     </div>
     <div class="right">
       <div
         class="right-content"
-        v-for="(item, index) in rightList"
+        v-for="(item, index) in hotList"
         :key="item.id"
-        :class="{ 'has-border': index + 1 < rightList.length }"
+        :class="{ 'has-border': index + 1 < flashSaleList.length }"
       >
         <div class="decs">
           {{ item.title }}
@@ -51,25 +53,17 @@
 <script>
 export default {
   name: "homeHot",
+  props:{
+    flashSaleList:{
+      type:Array
+    },
+    hotList:{
+      type:Array
+    },
+  },
   data() {
     return {
-      rightList: [
-        {
-          title: "快乐暑假",
-          desc: "亲子游行记",
-          img: "http://pic5.40017.cn/i/ori/X2qU1lrKc8_130x130_00.jpg",
-          url: "https://m.ly.com/bustour/detail_1154238.html",
-          id: "001",
-        },
-        {
-          title: "温泉爆款",
-          desc: "又到一年温泉季",
-          img:
-            "http://pic5.40017.cn/03/000/a0/47/rB5oQFu-xSOAREI9ABBXqJrKjDg381_130x130_00.jpg",
-          id: "002",
-          url: "https://m.ly.com/bustour/detail_22541.html",
-        },
-      ],
+      
     };
   },
 };

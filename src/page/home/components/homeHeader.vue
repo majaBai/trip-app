@@ -9,18 +9,25 @@
         目的地/关键词
       </span>
     </div>
+    <router-link to="./location">
     <div class="header-city">
       <span class="horizontal-align">
-        上海
+        {{city}}
         <van-icon name="arrow-down" />
       </span>
     </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: "homeHeader",
+  props:{
+    city:{
+      type:String
+    }
+  },
   data() {
     return {
       fixedDuringScroll: false,
@@ -29,11 +36,9 @@ export default {
   methods: {
     watchScroll() {
       let topHeight = document.documentElement.scrollTop;
-      console.log(topHeight);
       if (topHeight > 10) {
         this.fixedDuringScroll = true;
       } else {
-        console.log("清空");
         this.fixedDuringScroll = false;
       }
     },
@@ -74,6 +79,9 @@ export default {
   .searchColor
     background: #eee
     color: #545252bd
+  a
+    text-decoration:none
+    color: black
   .header-city
     // background-color: red
     float: right

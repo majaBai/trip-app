@@ -1,7 +1,7 @@
 <template>
   <div class="home-catalog">
     <div class="catalog-wrapper">
-      <div v-for="item in iconList" :key="item.id" class="icon-wrapper">
+      <div v-for="item in catalogList" :key="item.id" class="icon-wrapper">
         <div class="icon-img">
           <img class="img" :src="item.url" alt="" />
         </div>
@@ -21,44 +21,16 @@
 <script>
 export default {
   name: "homeCatalog",
+  props:{
+    catalogList:{
+      type: Array
+    },
+    recommendationList:{
+      type: Array
+    }
+  },
   data() {
     return {
-      iconList: [
-        {
-          url:
-            "https://pic5.40017.cn/03/000/f7/f7/rBANB1ykgrGAHeQqAAAK6S6Ptyc182.png",
-          desc: "海滨岛屿",
-          id: "001",
-        },
-        {
-          url:
-            "https://pic5.40017.cn/03/000/6b/b5/rB5oQFykgnaAX8MYAAALPO5ToOE755.png",
-          desc: "城市观光",
-          id: "002",
-        },
-        {
-          url:
-            "https://pic5.40017.cn/03/000/f8/01/rBANB1ykguWAIMiGAAAMLCV__p4275.png",
-          desc: "亲子游",
-          id: "003",
-        },
-        {
-          url:
-            "https://pic5.40017.cn/03/000/6b/ec/rB5oQFykg5SAFttgAAAMmtJBy1o096.png",
-          desc: "温泉养生",
-          id: "004",
-        },
-      ],
-      recommendationList: [
-        {
-          url: "https://pic5.40017.cn/i/ori/NnlrqWinvi.jpg",
-          id: "r-001",
-        },
-        {
-          url: "https://pic5.40017.cn/i/ori/Oda2C2cnK0.jpg",
-          id: "r-002",
-        },
-      ],
     };
   },
 };

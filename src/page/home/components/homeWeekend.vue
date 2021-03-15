@@ -8,7 +8,7 @@
     <swiper class="weekend-item" ref="mySwiper" :options="swiperOptions">
       <swiper-slide
         class="weekend-slide"
-        v-for="item in swiperItems"
+        v-for="item in weekendList"
         :key="item.id"
       >
         <div class="slide-box">
@@ -29,41 +29,18 @@
 <script>
 export default {
   name: "homeWeekend",
+   props:{
+    weekendList:{
+      type: Array
+    }
+  },
   data() {
     return {
       swiperOptions: {
         // loop: true,
         slidesPerView: 3,
       },
-      swiperItems: [
-        {
-          id: "001",
-          img:
-            "http://pic5.40017.cn/02/000/59/74/rBLkCVkyrKOAW_9gAAEAAPEX4T8922_450x250_00.jpg.webp",
-          title: "桂林",
-          desc: "桂林山水甲天下",
-        },
-
-        {
-          id: "002",
-          img: "http://pic5.40017.cn/i/ori/SF1daBTsuQ_450x250_00.jpg.webp",
-          title: "深圳西冲",
-          desc: "冲浪/徒步沙滩",
-        },
-        {
-          id: "003",
-          img:
-            "http://pic5.40017.cn/01/000/ad/d4/rBANC1pq0AeADTUjAANpe2OjYaY502_450x250_00.jpg.webp",
-          title: "韶关丹霞山",
-          desc: "世界自然遗产",
-        },
-        {
-          id: "004",
-          img: "http://pic5.40017.cn/i/ori/RZmcp8c5kk_450x250_00.jpg.webp",
-          title: "连山梯田",
-          desc: "中国十大梯田之一",
-        },
-      ],
+      
     };
   },
 };
