@@ -33,7 +33,6 @@ export default {
 <style scoped>
 .location{
     background-color: white;
-
     /* height: 100vh;
     width: 100vw;
     overflow: hidden; */

@@ -1,5 +1,6 @@
 <template>
-  <div class="location-list">
+  <div class="location-list" ref='wrapper'>
+      <div>
       <div class="current">
           <div class='current-titel'>当前</div>
           <div class='current-city'>正在获取位置信息</div>
@@ -29,12 +30,12 @@
           </div>
       </div>
       </div>
-      
-   
+      </div>
   </div>
 </template>
 
 <script>
+import BetterScroll from 'better-scroll'
 
 export default {
   name: "locationList",
@@ -143,7 +144,7 @@ export default {
          },
          {
              alph:'C',
-             id:'002',
+             id:'003',
              cities:[
                  {
                      id:"C-01",
@@ -183,6 +184,24 @@ export default {
   methods: {
     
   },
+  mounted(){
+      let that = this
+      this.$nextTick(()=>{
+          let bs = new BetterScroll(that.$refs.wrapper, {
+          click: true,
+          mouseWheel:{
+              speed: 20,
+              invert: false,
+              easeTime: 300,
+              outOfBoundaryDampingFactor: 1,
+          }
+
+      })
+      console.log(bs)
+      })
+      
+  },
+
   created() {
   },
 };
@@ -191,7 +210,16 @@ export default {
 <style scoped>
 .location-list{
     background-color: #e9ecf1;
-
+   /* 下面是 better-scroll 需要 
+   better-scroll 作用于 wrapper, 并且只会滚动 wrapper 下的第一个子元素；
+   只有当第一个子元素的高/宽度大于wrapper时才会滚动，因此最好设定wrapper的高/宽度以及overflow:hidden;
+   */
+   position: absolute;
+   top:0.9rem;
+   z-index: 2;
+   /* 出发一个bfc */
+   overflow:hidden; 
+   bottom: 0;
     
 }
 
@@ -234,7 +262,7 @@ export default {
 .alph-wrapper{
     /* height: 100vh;
     overflow-y: auto; */
-
+   /* margin-bottom: 0.9rem; */
 }
 .alph-city-wrapper{
     background-color: white;
