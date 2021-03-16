@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 <template>
   <div class="location-list" ref='wrapper'>
       <div>
       <div class="current">
           <div class='current-titel'>当前</div>
-          <div class='current-city'>正在获取位置信息</div>
+          <div class='current-city'>{{currentCity}}</div>
       </div>
       <div class='hot'>
           <div class='hot-titel'>热门城市</div>
@@ -36,12 +37,14 @@
 
 <script>
 import BetterScroll from 'better-scroll'
+import loadBMap from './loadBMap'
 
 export default {
   name: "locationList",
   
   data(){
     return{
+        currentCity: '正在获取位置信息...',
      hotCity:[
          {
              id:'001',
@@ -182,10 +185,22 @@ export default {
     }
   },
   methods: {
-    
+    getCurrentCity(result){
+        if(result && result.name){
+            this.currentCity = result.name
+            console.log(result, "当前定位城市:"+ this.currentCity);
+        } else {
+            console.log('定位当前城市出错')
+        }
+    }
   },
-  mounted(){
+  async mounted(){
       let that = this
+      let Bmap = await loadBMap(that.$AK)
+      console.log('Bmap', Bmap)
+      let myCity = new Bmap.LocalCity();
+      myCity.get(that.getCurrentCity);
+
       this.$nextTick(()=>{
           let bs = new BetterScroll(that.$refs.wrapper, {
           click: true,
@@ -195,9 +210,8 @@ export default {
               easeTime: 300,
               outOfBoundaryDampingFactor: 1,
           }
-
       })
-      console.log(bs)
+    //   console.log(bs)
       })
       
   },
@@ -259,11 +273,7 @@ export default {
     border-radius: 2px;
     color: rgb(128, 128, 128)
 }
-.alph-wrapper{
-    /* height: 100vh;
-    overflow-y: auto; */
-   /* margin-bottom: 0.9rem; */
-}
+
 .alph-city-wrapper{
     background-color: white;
     padding-left: 0.2rem;

@@ -14,6 +14,8 @@ import axios from 'axios'
 Vue.use(Vant);
 Vue.use(VueAwesomeSwiper)
 Vue.prototype.$axios = axios
+// 引入百度地图需要的 AK
+Vue.prototype.$AK = 'mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et'
 
 FastClick.attach(document.body);
 

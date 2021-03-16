@@ -80,7 +80,6 @@ export default {
     background: #eee
     color: #545252bd
   a
-    text-decoration:none
     color: black
   .header-city
     // background-color: red
