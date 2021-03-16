@@ -1,27 +1,35 @@
 <template>
   <div class="location">
    <location-header></location-header>
-   <location-list></location-list>
+   <location-list :currentLetter="currentLetter"></location-list>
+   <location-alphabet @changeAlphabet="handeleChangeAlphabet"></location-alphabet>
+   
   </div>
 </template>
 
 <script>
 import locationHeader from "./components/locationHeader.vue";
 import locationList from "./components/locationList.vue";
+import locationAlphabet from "./components/locationAlphabet.vue";
 
 export default {
   name: "Location",
   components: {
     locationHeader,
-    locationList
+    locationList,
+    locationAlphabet
   },
   data(){
     return{
-      
+      currentLetter:''
     }
   },
   methods: {
-   
+   handeleChangeAlphabet(letter){
+     console.log('alphabet change', letter)
+     this.currentLetter = letter
+
+   }
     
   },
  

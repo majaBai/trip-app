@@ -2,11 +2,11 @@
 <template>
   <div class="location-list" ref='wrapper'>
       <div>
-      <div class="current">
+      <div class="current" ref="current">
           <div class='current-titel'>当前</div>
           <div class='current-city'>{{currentCity}}</div>
       </div>
-      <div class='hot'>
+      <div class='hot' ref="hot">
           <div class='hot-titel'>热门城市</div>
           <div class='hot-city-list'>
               <div 
@@ -19,7 +19,9 @@
       <div class="alph-wrapper">
       <div class="alph" 
       v-for="item in alphList" 
-      :key="item.id">
+      :key="item.id"
+      :ref="item.alph"
+      >
           <div class='alph-tilte'>{{item.alph}}</div>
           <div class='alph-city-wrapper'>
           <div class='alph-city-list' 
@@ -41,6 +43,11 @@ import loadBMap from './loadBMap'
 
 export default {
   name: "locationList",
+  props:{
+    currentLetter:{
+        type: String
+    }
+  },
   
   data(){
     return{
@@ -179,10 +186,259 @@ export default {
                  }
                  
              ]
-         }
-
+         },
+         {
+             alph:'D',
+             id:'004',
+             cities:[
+                 {
+                     id:"d-01",
+                     name:"大连"
+                 },
+             ]
+         },
+         {
+             alph:'E',
+             id:'005',
+             cities:[
+                 {
+                     id:"e-01",
+                     name:"鄂尔多斯"
+                 },
+             ]
+         },
+         {
+             alph:'F',
+             id:'006',
+             cities:[
+                 {
+                     id:"f-01",
+                     name:"佛山"
+                 },
+             ]
+         },
+         {
+             alph:'G',
+             id:'007',
+             cities:[
+                 {
+                     id:"g-01",
+                     name:"广州"
+                 },
+             ]
+         },
+         {
+             alph:'H',
+             id:'008',
+             cities:[
+                 {
+                     id:"h-01",
+                     name:"杭州"
+                 },
+             ]
+         },
+         {
+             alph:'I',
+             id:'009',
+             cities:[
+                 {
+                     id:"i-01",
+                     name:"没有"
+                 },
+             ]
+         },
+         {
+             alph:'J',
+             id:'010',
+             cities:[
+                 {
+                     id:"j-01",
+                     name:"济南"
+                 },
+             ]
+         },
+         {
+             alph:'K',
+             id:'011',
+             cities:[
+                 {
+                     id:"k-01",
+                     name:"昆明"
+                 },
+             ]
+         },
+         {
+             alph:'L',
+             id:'012',
+             cities:[
+                 {
+                     id:"l-01",
+                     name:"廊坊"
+                 },
+             ]
+         },
+         {
+             alph:'M',
+             id:'013',
+             cities:[
+                 {
+                     id:"m-01",
+                     name:"马鞍山"
+                 },
+             ]
+         },
+         {
+             alph:'N',
+             id:'014',
+             cities:[
+                 {
+                     id:"n-01",
+                     name:"宁波"
+                 },
+             ]
+         },
+         {
+             alph:'O',
+             id:'015',
+             cities:[
+                 {
+                     id:"o-01",
+                     name:"没有"
+                 },
+             ]
+         },
+         {
+             alph:'P',
+             id:'016',
+             cities:[
+                 {
+                     id:"p-01",
+                     name:"攀枝花"
+                 },
+             ]
+         },
+         {
+             alph:'Q',
+             id:'017',
+             cities:[
+                 {
+                     id:"q-01",
+                     name:"青岛"
+                 },
+             ]
+         },
+         {
+             alph:'R',
+             id:'018',
+             cities:[
+                 {
+                     id:"r-01",
+                     name:"日照"
+                 },
+             ]
+         },
+         {
+             alph:'S',
+             id:'019',
+             cities:[
+                 {
+                     id:"s-01",
+                     name:"上海"
+                 },
+             ]
+         },
+         {
+             alph:'T',
+             id:'020',
+             cities:[
+                 {
+                     id:"t-01",
+                     name:"天津"
+                 },
+             ]
+         },
+         {
+             alph:'U',
+             id:'021',
+             cities:[
+                 {
+                     id:"u-01",
+                     name:"没有"
+                 },
+             ]
+         },
+         {
+             alph:'V',
+             id:'022',
+             cities:[
+                 {
+                     id:"v-01",
+                     name:"没有"
+                 },
+             ]
+         },
+         {
+             alph:'W',
+             id:'023',
+             cities:[
+                 {
+                     id:"w-01",
+                     name:"无锡"
+                 },
+             ]
+         },
+         {
+             alph:'X',
+             id:'024',
+             cities:[
+                 {
+                     id:"x-01",
+                     name:"西安"
+                 },
+             ]
+         },
+         {
+             alph:'Y',
+             id:'025',
+             cities:[
+                 {
+                     id:"y-01",
+                     name:"烟台"
+                 },
+             ]
+         },
+         {
+             alph:'Z',
+             id:'026',
+             cities:[
+                 {
+                     id:"z-01",
+                     name:"郑州"
+                 },
+             ]
+         },
+         
      ]
     }
+  },
+  watch:{
+      currentLetter(){
+          console.log('watch----', this.currentLetter)
+          let elementAlph = this.$refs[this.currentLetter]
+          let elementCurrent = this.$refs.current
+          let elementHot = this.$refs.hot
+        //   console.log('elementAlph[0]', elementAlph[0])
+          if(elementAlph){
+              let element = elementAlph[0]
+              this.scroll.scrollToElement(element)
+          } else {
+              if(this.currentLetter === '当前'){
+              this.scroll.scrollToElement(elementCurrent)
+              } else{
+              this.scroll.scrollToElement(elementHot)
+              }
+          }
+      }
   },
   methods: {
     getCurrentCity(result){
@@ -202,16 +458,14 @@ export default {
       myCity.get(that.getCurrentCity);
 
       this.$nextTick(()=>{
-          let bs = new BetterScroll(that.$refs.wrapper, {
+          this.scroll = new BetterScroll(that.$refs.wrapper, {
           click: true,
           mouseWheel:{
               speed: 20,
               invert: false,
               easeTime: 300,
-              outOfBoundaryDampingFactor: 1,
           }
       })
-    //   console.log(bs)
       })
       
   },
