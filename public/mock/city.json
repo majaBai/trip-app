@@ -29,342 +29,348 @@
             "name":"南京"
         }
     ],
-    "cityList":[
-        {
+    "cityList":{
+        "A": {
             "alph":"A",
             "id":"001",
             "cities":[
                 {
                     "id":"A-01",
-                    "name":"安庆"
+                    "name":"安庆",
+                    "spell": "anqing"
                 },
                 {
                     "id":"A-02",
-                    "name":"安顺"
+                    "name":"安顺",
+                    "spell": "anshun"
                 },
                 {
                     "id":"A-03",
-                    "name":"安阳"
+                    "name":"安阳",
+                    "spell": "anyang"
                 },
                 {
                     "id":"A-04",
-                    "name":"鞍山"
+                    "name":"鞍山",
+                    "spell": "anshan"
                 },
                 {
                     "id":"A-05",
-                    "name":"安康"
+                    "name":"安康",
+                    "spell": "ankang"
                 },
                 {
                     "id":"A-06",
-                    "name":"阿里"
+                    "name":"阿里",
+                    "spell": "ali"
                 },
                 {
                     "id":"A-07",
-                    "name":"阿坝"
+                    "name":"阿坝",
+                    "spell": "aba"
                 },
                 {
                     "id":"A-08",
-                    "name":"阿克苏"
+                    "name":"阿克苏",
+                    "spell": "akesu"
                 }
 
             ]
         },
-        {
+        "B":{
             "alph":"B",
             "id":"002",
             "cities":[
                 {
                     "id":"B-01",
-                    "name":"蚌埠"
+                    "name":"蚌埠",
+                    "spell": "bengbu" 
                 },
                 {
                     "id":"B-02",
-                    "name":"亳州"
+                    "name":"亳州",
+                    "spell": "bozhou"
                 },
                 {
                     "id":"B-03",
-                    "name":"北京"
+                    "name":"北京",
+                    "spell": "beijing"
                 },
                 {
                     "id":"B-04",
-                    "name":"白银"
+                    "name":"白银",
+                    "spell": "baiyin"
                 },
                 {
                     "id":"B-05",
-                    "name":"北海"
+                    "name":"北海",
+                    "spell": "beihai"
                 },
                 {
                     "id":"B-06",
-                    "name":"毕节"
+                    "name":"毕节",
+                    "spell": "bijie" 
                 }
             ]
         },
-        {
+        "C":{
             "alph":"C",
             "id":"003",
             "cities":[
                 {
                     "id":"C-01",
-                    "name":"重庆"
+                    "name":"重庆",
+                    "spell": "chongqing"
                 },
                 {
                     "id":"C-02",
-                    "name":"成都"
+                    "name":"成都",
+                    "spell": "chengdu"
                 },
                 {
                     "id":"C-03",
-                    "name":"长沙"
+                    "name":"长沙",
+                    "spell": "changsha"
                 },
                 {
                     "id":"C-04",
-                    "name":"常州"
+                    "name":"常州",
+                    "spell": "changzhou"
                 },
                 {
                     "id":"C-05",
-                    "name":"长春"
+                    "name":"长春",
+                    "spell": "changchun"
                 },
                 {
                     "id":"C-06",
-                    "name":"承德"
+                    "name":"承德",
+                    "spell": "chengde"
                 },
                 {
                     "id":"C-07",
-                    "name":"沧州"
+                    "name":"沧州",
+                    "spell": "changzhou"
                 }
                 
             ]
         },
-        {
+        "D":{
             "alph":"D",
             "id":"004",
             "cities":[
                 {
                     "id":"d-01",
-                    "name":"大连"
+                    "name":"大连",
+                    "spell": "dalian"
                 }
             ]
         },
-        {
+        "E":{
             "alph":"E",
             "id":"005",
             "cities":[
                 {
                     "id":"e-01",
-                    "name":"鄂尔多斯"
+                    "name":"鄂尔多斯",
+                    "spell": "eerduosi"
                 }
             ]
         },
-        {
+        "F":{
             "alph":"F",
             "id":"006",
             "cities":[
                 {
                     "id":"f-01",
-                    "name":"佛山"
+                    "name":"佛山",
+                    "spell": "foshan"
                 }
             ]
         },
-        {
+        "G":{
             "alph":"G",
             "id":"007",
             "cities":[
                 {
                     "id":"g-01",
-                    "name":"广州"
+                    "name":"广州",
+                    "spell": "guangzhou"
                 }
             ]
         },
-        {
+        "H":{
             "alph":"H",
             "id":"008",
             "cities":[
                 {
                     "id":"h-01",
-                    "name":"杭州"
+                    "name":"杭州",
+                    "spell": "hangzhou"
                 }
             ]
         },
-        {
-            "alph":"I",
-            "id":"009",
-            "cities":[
-                {
-                    "id":"i-01",
-                    "name":"没有"
-                }
-            ]
-        },
-        {
+        
+        "J":{
             "alph":"J",
             "id":"010",
             "cities":[
                 {
                     "id":"j-01",
-                    "name":"济南"
+                    "name":"济南",
+                    "spell": "jinan"
                 }
             ]
         },
-        {
+        "K":{
             "alph":"K",
             "id":"011",
             "cities":[
                 {
                     "id":"k-01",
-                    "name":"昆明"
+                    "name":"昆明",
+                    "spell": "kunming"
                 }
             ]
         },
-        {
+        "L":{
             "alph":"L",
             "id":"012",
             "cities":[
                 {
                     "id":"l-01",
-                    "name":"廊坊"
+                    "name":"廊坊",
+                    "spell": "langfang"
                 }
             ]
         },
-        {
+        "M":{
             "alph":"M",
             "id":"013",
             "cities":[
                 {
                     "id":"m-01",
-                    "name":"马鞍山"
+                    "name":"马鞍山",
+                    "spell": "maanshan"
                 }
             ]
         },
-        {
+        "N":{
             "alph":"N",
             "id":"014",
             "cities":[
                 {
                     "id":"n-01",
-                    "name":"宁波"
+                    "name":"宁波",
+                    "spell": "ningbo"
                 }
             ]
         },
-        {
-            "alph":"O",
-            "id":"015",
-            "cities":[
-                {
-                    "id":"o-01",
-                    "name":"没有"
-                }
-            ]
-        },
-        {
+        
+        "P":{
             "alph":"P",
             "id":"016",
             "cities":[
                 {
                     "id":"p-01",
-                    "name":"攀枝花"
+                    "name":"攀枝花",
+                    "spell": "panzhihua"
+
                 }
             ]
         },
-        {
+        "Q":{
             "alph":"Q",
             "id":"017",
             "cities":[
                 {
                     "id":"q-01",
-                    "name":"青岛"
+                    "name":"青岛",
+                    "spell": "qingdao"
                 }
             ]
         },
-        {
+        "R":{
             "alph":"R",
             "id":"018",
             "cities":[
                 {
                     "id":"r-01",
-                    "name":"日照"
+                    "name":"日照",
+                    "spell": "rizhao"
                 }
             ]
         },
-        {
+        "S":{
             "alph":"S",
             "id":"019",
             "cities":[
                 {
                     "id":"s-01",
-                    "name":"上海"
+                    "name":"上海",
+                    "spell": "shanghai"
                 }
             ]
         },
-        {
+        "T":{
             "alph":"T",
             "id":"020",
             "cities":[
                 {
                     "id":"t-01",
-                    "name":"天津"
+                    "name":"天津",
+                    "spell": "tianjin"
                 }
             ]
         },
-        {
-            "alph":"U",
-            "id":"021",
-            "cities":[
-                {
-                    "id":"u-01",
-                    "name":"没有"
-                }
-            ]
-        },
-        {
-            "alph":"V",
-            "id":"022",
-            "cities":[
-                {
-                    "id":"v-01",
-                    "name":"没有"
-                }
-            ]
-        },
-        {
+       
+       
+        "W":{
             "alph":"W",
             "id":"023",
             "cities":[
                 {
                     "id":"w-01",
-                    "name":"无锡"
+                    "name":"无锡",
+                    "spell": "wuxi"
+
                 }
             ]
         },
-        {
+        "X":{
             "alph":"X",
             "id":"024",
             "cities":[
                 {
                     "id":"x-01",
-                    "name":"西安"
+                    "name":"西安",
+                    "spell": "xian"
                 }
             ]
         },
-        {
+        "Y": {
             "alph":"Y",
             "id":"025",
             "cities":[
                 {
                     "id":"y-01",
-                    "name":"烟台"
+                    "name":"烟台",
+                    "spell": "yantai"
                 }
             ]
         },
-        {
+        "Z":{
             "alph":"Z",
             "id":"026",
             "cities":[
                 {
                     "id":"z-01",
-                    "name":"郑州"
+                    "name":"郑州",
+                    "spell": "zhengzhou"
                 }
             ]
         }
-    ],
+},
     "alphabetList":[
         {
             "id":"01",
@@ -406,10 +412,7 @@
             "id":"10",
             "content":"H"
         },
-        {
-            "id":"11",
-            "content":"I"
-        },
+        
         {
             "id":"12",
             "content":"J"
@@ -430,10 +433,7 @@
             "id":"16",
             "content":"N"
         },
-        {
-            "id":"17",
-            "content":"O"
-        },
+        
         {
             "id":"18",
             "content":"P"
@@ -454,14 +454,7 @@
             "id":"22",
             "content":"T"
         },
-        {
-            "id":"23",
-            "content":"U"
-        },
-        {
-            "id":"24",
-            "content":"V"
-        },
+        
         {
             "id":"25",
             "content":"W"

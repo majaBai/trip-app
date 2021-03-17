@@ -1,9 +1,9 @@
 <template>
   <div class="location">
-   <location-header></location-header>
+    <div class="loading" v-if="loading">loading...</div>
+   <location-header :cityList="cityList"></location-header>
    <location-list :currentLetter="currentLetter" :hotCity="hotCity" :cityList="cityList"></location-list>
    <location-alphabet @changeAlphabet="handeleChangeAlphabet" :alphabetList="alphabetList"></location-alphabet>
-   
   </div>
 </template>
 
@@ -23,8 +23,9 @@ export default {
     return{
       currentLetter:'',
       hotCity:[],
-      cityList:[],
-      alphabetList:[]
+      cityList:{},
+      alphabetList:[],
+      loading: true
     }
   },
   methods: {
@@ -39,6 +40,7 @@ export default {
      this.hotCity = data.hotCity
      this.cityList = data.cityList
      this.alphabetList = data.alphabetList
+     this.loading = false
    }
     
   },
@@ -56,6 +58,14 @@ export default {
     width: 100vw;
     overflow: hidden; */
 
+}
+.loading{
+  position: absolute;
+  top: 7rem;
+  text-align: center;
+  z-index:1500;
+  left: 3rem;
+  opacity: 0.3;
 }
 
 /* .location::-webkit-scrollbar { width: 0 !important } */
