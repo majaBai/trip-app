@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getInitData(res) {
-      // console.log("res", res.data.data);
+      console.log("res", res.data.data);
       let data = res.data.data
       this.city = data.city
       this.swiperList = data.swiperList
@@ -54,7 +54,7 @@ export default {
     },
   },
   created() {
-    this.$axios.get("/api/init").then(this.getInitData);
+    this.$axios.get("/api/index.json").then(this.getInitData);
   },
 };
 </script>

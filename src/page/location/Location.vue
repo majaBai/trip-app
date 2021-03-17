@@ -1,8 +1,8 @@
 <template>
   <div class="location">
    <location-header></location-header>
-   <location-list :currentLetter="currentLetter"></location-list>
-   <location-alphabet @changeAlphabet="handeleChangeAlphabet"></location-alphabet>
+   <location-list :currentLetter="currentLetter" :hotCity="hotCity" :cityList="cityList"></location-list>
+   <location-alphabet @changeAlphabet="handeleChangeAlphabet" :alphabetList="alphabetList"></location-alphabet>
    
   </div>
 </template>
@@ -21,7 +21,10 @@ export default {
   },
   data(){
     return{
-      currentLetter:''
+      currentLetter:'',
+      hotCity:[],
+      cityList:[],
+      alphabetList:[]
     }
   },
   methods: {
@@ -29,11 +32,19 @@ export default {
      console.log('alphabet change', letter)
      this.currentLetter = letter
 
+   },
+   initLocationPage(result){
+     console.log('location data:', result.data)
+     let data = result.data
+     this.hotCity = data.hotCity
+     this.cityList = data.cityList
+     this.alphabetList = data.alphabetList
    }
     
   },
  
   created() {
+    this.$axios.get('api/city.json').then(this.initLocationPage)
   },
 };
 </script>

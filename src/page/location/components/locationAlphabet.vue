@@ -15,125 +15,130 @@
 
 export default {
   name: "locationAlphabet",
+  props:{
+    alphabetList:{
+        type:Array
+    }
+  },
   
   data(){
     return{
         content:'热门城市',
         showContent: false,
-        alphabetList:[
-            {
-                id:'01',
-                content:'当前'
-            },
-            {
-                id:'02',
-                content:'热门城市'
-            },
-            {
-                id:'03',
-                content:'A'
-            },
-            {
-                id:'04',
-                content:'B'
-            },
-            {
-                id:'05',
-                content:'C'
-            },
-            {
-                id:'06',
-                content:'D'
-            },
-            {
-                id:'07',
-                content:'E'
-            },
-            {
-                id:'08',
-                content:'F'
-            },
-            {
-                id:'09',
-                content:'G'
-            },
-            {
-                id:'10',
-                content:'H'
-            },
-            {
-                id:'11',
-                content:'I'
-            },
-            {
-                id:'12',
-                content:'J'
-            },
-            {
-                id:'13',
-                content:'K'
-            },
-            {
-                id:'14',
-                content:'L'
-            },
-            {
-                id:'15',
-                content:'M'
-            },
-            {
-                id:'16',
-                content:'N'
-            },
-            {
-                id:'17',
-                content:'O'
-            },
-            {
-                id:'18',
-                content:'P'
-            },
-            {
-                id:'19',
-                content:'Q'
-            },
-            {
-                id:'20',
-                content:'R'
-            },
-            {
-                id:'21',
-                content:'S'
-            },
-            {
-                id:'22',
-                content:'T'
-            },
-            {
-                id:'23',
-                content:'U'
-            },
-            {
-                id:'24',
-                content:'V'
-            },
-            {
-                id:'25',
-                content:'W'
-            },
-            {
-                id:'26',
-                content:'X'
-            },
-            {
-                id:'27',
-                content:'Y'
-            },
-            {
-                id:'28',
-                content:'Z'
-            }
-        ]
+        // alphabetList:[
+        //     {
+        //         id:'01',
+        //         content:'当前'
+        //     },
+        //     {
+        //         id:'02',
+        //         content:'热门城市'
+        //     },
+        //     {
+        //         id:'03',
+        //         content:'A'
+        //     },
+        //     {
+        //         id:'04',
+        //         content:'B'
+        //     },
+        //     {
+        //         id:'05',
+        //         content:'C'
+        //     },
+        //     {
+        //         id:'06',
+        //         content:'D'
+        //     },
+        //     {
+        //         id:'07',
+        //         content:'E'
+        //     },
+        //     {
+        //         id:'08',
+        //         content:'F'
+        //     },
+        //     {
+        //         id:'09',
+        //         content:'G'
+        //     },
+        //     {
+        //         id:'10',
+        //         content:'H'
+        //     },
+        //     {
+        //         id:'11',
+        //         content:'I'
+        //     },
+        //     {
+        //         id:'12',
+        //         content:'J'
+        //     },
+        //     {
+        //         id:'13',
+        //         content:'K'
+        //     },
+        //     {
+        //         id:'14',
+        //         content:'L'
+        //     },
+        //     {
+        //         id:'15',
+        //         content:'M'
+        //     },
+        //     {
+        //         id:'16',
+        //         content:'N'
+        //     },
+        //     {
+        //         id:'17',
+        //         content:'O'
+        //     },
+        //     {
+        //         id:'18',
+        //         content:'P'
+        //     },
+        //     {
+        //         id:'19',
+        //         content:'Q'
+        //     },
+        //     {
+        //         id:'20',
+        //         content:'R'
+        //     },
+        //     {
+        //         id:'21',
+        //         content:'S'
+        //     },
+        //     {
+        //         id:'22',
+        //         content:'T'
+        //     },
+        //     {
+        //         id:'23',
+        //         content:'U'
+        //     },
+        //     {
+        //         id:'24',
+        //         content:'V'
+        //     },
+        //     {
+        //         id:'25',
+        //         content:'W'
+        //     },
+        //     {
+        //         id:'26',
+        //         content:'X'
+        //     },
+        //     {
+        //         id:'27',
+        //         content:'Y'
+        //     },
+        //     {
+        //         id:'28',
+        //         content:'Z'
+        //     }
+        // ]
     
     }
   },
