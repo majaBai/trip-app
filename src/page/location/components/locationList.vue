@@ -1,39 +1,42 @@
 /* eslint-disable no-unused-vars */
 <template>
-  <div class="location-list" ref='wrapper'>
-      <div>
-      <div class="current" ref="current">
-          <div class='current-titel'>当前</div>
-          <div class='current-city'>{{currentCity}}</div>
-      </div>
-      <div class='hot' ref="hot">
-          <div class='hot-titel'>热门城市</div>
-          <div class='hot-city-list'>
-              <div 
-              class='hot-city-item'
-              v-for="item in hotCity"
-              :key = "item.id"
-              >{{item.name}}</div>
-          </div>
-      </div>
-      <div class="alph-wrapper">
-      <div class="alph" 
-      v-for="(item, key) in cityList" 
-      :key="key"
-      :ref="key"
-      >
-          <div class='alph-tilte'>{{key}}</div>
-          <div class='alph-city-wrapper'>
-          <div class='alph-city-list' 
-          v-for="(city, idx) in item.cities" 
-          :class="{'border-bottom': idx+1 != item.cities.length}"
-          :key="city.id">
-              {{city.name}}
-          </div>
-          </div>
-      </div>
-      </div>
-      </div>
+  <div class="location-list" ref='locationWrapper' id='locationWrapper'>
+    <div>
+        <div class="current" ref="current">
+            <div class='current-titel'>当前</div>
+            <div class='current-city' @click.self='afterSelectCity(0)'>{{currentCity}}</div>
+        </div>
+        <div class='hot' ref="hot">
+            <div class='hot-titel'>热门城市</div>
+            <div class='hot-city-list'>
+                <div 
+                class='hot-city-item'
+                v-for="item in hotCity"
+                :key = "item.id"
+                @click.self='afterSelectCity(1, item.name)'
+                >{{item.name}}</div>
+            </div>
+        </div>
+        <div class="alph-wrapper">
+        <div class="alph" 
+        v-for="(item, key) in cityList" 
+        :key="key"
+        :ref="key"
+        >
+            <div class='alph-tilte'>{{key}}</div>
+            <div class='alph-city-wrapper'>
+            <div class='alph-city-list' 
+            v-for="(city, idx) in item.cities" 
+            :class="{'border-bottom': idx+1 != item.cities.length}"
+            :key="city.id"
+            @click.self='afterSelectCity(2, city.name)'
+            >
+                {{city.name}}
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -57,18 +60,26 @@ export default {
   
   data(){
     return{
-        currentCity: '正在获取位置信息...',
+        // currentCity: '正在获取位置信息...',
     }
   },
+  computed:{
+      currentCity(){
+         return this.$store.state.currentCity? this.$store.state.currentCity : '正在获取位置信息...'
+      },
+      
+  },
   watch:{
+      // 滚动到当前点击的字母所对应的位置
       currentLetter(){
           console.log('watch----', this.currentLetter)
           let elementAlph = this.$refs[this.currentLetter]
           let elementCurrent = this.$refs.current
           let elementHot = this.$refs.hot
-        //   console.log('elementAlph[0]', elementAlph[0])
+          console.log('elementAlph[0]', elementAlph[0])
           if(elementAlph){
               let element = elementAlph[0]
+              console.log('this.scroll', this.scroll)
               this.scroll.scrollToElement(element)
           } else {
               if(this.currentLetter === '当前'){
@@ -80,30 +91,49 @@ export default {
       }
   },
   methods: {
-    getCurrentCity(result){
-        if(result && result.name){
-            this.currentCity = result.name
-            console.log(result, "当前定位城市:"+ this.currentCity);
-        } else {
-            console.log('定位当前城市出错')
+    // getCurrentCity(result){
+    //     if(result && result.name){
+    //         this.currentCity = result.name
+    //         console.log(result, "当前定位城市:"+ this.currentCity);
+    //     } else {
+    //         console.log('定位当前城市出错')
+    //     }
+    // }
+    afterSelectCity(flag, city){
+        // 1 代表点击了热门城市
+        // 2 代表选择了城市列表中的城市
+        // 0 代表选择了当前城市
+        if(flag !== 0){
+        this.$store.dispatch('getNewCurrentCity', city)
         }
+        this.$router.push('./')
+
     }
   },
-  async mounted(){
+  mounted(){
       let that = this
-      let Bmap = await loadBMap(that.$AK)
-      console.log('Bmap', Bmap)
-      let myCity = new Bmap.LocalCity();
-      myCity.get(that.getCurrentCity);
-
+    
+    
+    // this.scroll = new BetterScroll('#locationWrapper', {
+    //       click: true,
+    //       mouseWheel:{
+    //           speed: 20,
+    //           invert: false,
+    //           easeTime: 300,
+    //       }
+    //   })
+    //  console.log('bs', this.scroll)
+    //  if(this.scroll){
+    //      this.scroll.refresh()
+    //  }
       this.$nextTick(()=>{
-          this.scroll = new BetterScroll(that.$refs.wrapper, {
+          that.scroll = new BetterScroll(that.$refs.locationWrapper, {
           click: true,
-          mouseWheel:{
-              speed: 20,
-              invert: false,
-              easeTime: 300,
-          }
+        //   mouseWheel:{
+        //       speed: 20,
+        //       invert: false,
+        //       easeTime: 300,
+        //   }
       })
       })
       

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <div>Home page</div> -->
-    <home-header :city="city" class="home-header"></home-header>
+    <home-header :city="currentCity" class="home-header"></home-header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-catalog class="home-catalog" :catalogList="catalogList" :recommendationList="recommendationList"></home-catalog>
     <home-hot class="home-hot" :flashSaleList="flashSaleList" :hotList="hotList"></home-hot>
@@ -17,6 +17,7 @@ import homeCatalog from "./components/homeCatalog.vue";
 import homeHot from "./components/homeHot.vue";
 import homeWeekend from "./components/homeWeekend.vue";
 import homeGuess from "./components/homeGuess.vue";
+import { mapState } from 'vuex'
 export default {
   name: "Home",
   components: {
@@ -38,6 +39,11 @@ export default {
       weekendList:[],
       guessList:[],
     }
+  },
+  computed:{
+    ...mapState({
+      currentCity: state => state.currentCity
+    })
   },
   methods: {
     getInitData(res) {

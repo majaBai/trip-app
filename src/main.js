@@ -10,6 +10,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 // import 'swiper/dist/css/swiper.css'
 import axios from 'axios'
+import store from './store/store'
 
 Vue.use(Vant);
 Vue.use(VueAwesomeSwiper)
@@ -25,4 +26,5 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router,
+  store
 }).$mount('#app')
