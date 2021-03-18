@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 <template>
-  <div class="location-list" ref='locationWrapper' id='locationWrapper'>
+  <div class="location-list scrollWrapper" ref='locationWrapper'>
     <div>
         <div class="current" ref="current">
             <div class='current-titel'>当前</div>
@@ -80,6 +80,7 @@ export default {
           if(elementAlph){
               let element = elementAlph[0]
               console.log('this.scroll', this.scroll)
+            //   debugger;
               this.scroll.scrollToElement(element)
           } else {
               if(this.currentLetter === '当前'){
@@ -91,14 +92,6 @@ export default {
       }
   },
   methods: {
-    // getCurrentCity(result){
-    //     if(result && result.name){
-    //         this.currentCity = result.name
-    //         console.log(result, "当前定位城市:"+ this.currentCity);
-    //     } else {
-    //         console.log('定位当前城市出错')
-    //     }
-    // }
     afterSelectCity(flag, city){
         // 1 代表点击了热门城市
         // 2 代表选择了城市列表中的城市
@@ -107,36 +100,34 @@ export default {
         this.$store.dispatch('getNewCurrentCity', city)
         }
         this.$router.push('./')
-
     }
   },
   mounted(){
       let that = this
-    
-    
-    // this.scroll = new BetterScroll('#locationWrapper', {
-    //       click: true,
-    //       mouseWheel:{
-    //           speed: 20,
-    //           invert: false,
-    //           easeTime: 300,
-    //       }
+      console.log('betterScroll mounted', BetterScroll)
+    //   this.$nextTick(()=>{
+    //       that.scroll = new BetterScroll(that.$refs.locationWrapper, {
+    //         click: true,
+    //          mouseWheel:{
+    //             speed: 20,
+    //             invert: false,
+    //             easeTime: 300,
+    //           }
+    //        }
+    //      )
     //   })
-    //  console.log('bs', this.scroll)
-    //  if(this.scroll){
-    //      this.scroll.refresh()
-    //  }
-      this.$nextTick(()=>{
-          that.scroll = new BetterScroll(that.$refs.locationWrapper, {
-          click: true,
-        //   mouseWheel:{
-        //       speed: 20,
-        //       invert: false,
-        //       easeTime: 300,
-        //   }
-      })
-      })
-      
+
+      setTimeout(()=>{
+           that.scroll = new BetterScroll('.scrollWrapper', {
+            click: true,
+             mouseWheel:{
+                speed: 20,
+                invert: false,
+                easeTime: 300,
+              }
+           }
+         )
+      }, 16)
   },
 
   created() {

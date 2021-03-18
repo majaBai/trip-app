@@ -41,9 +41,9 @@ export default {
     }
   },
   computed:{
-    ...mapState({
-      currentCity: state => state.currentCity
-    })
+    currentCity(){
+      return this.$store.state.currentCity
+    }
   },
   methods: {
     getInitData(res) {
