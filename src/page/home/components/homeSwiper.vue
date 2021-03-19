@@ -26,6 +26,7 @@ export default {
         },
         // direction: "vertical",
         loop: true,
+        
       },
     };
   },

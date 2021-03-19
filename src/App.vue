@@ -24,7 +24,7 @@ export default {
   async mounted(){
     let that = this
     let Bmap = await loadBMap(that.$AK)
-    console.log('Bmap', Bmap)
+    // console.log('Bmap', Bmap)
     let myCity = new Bmap.LocalCity();
     myCity.get(that.getCurrentCity);
   }

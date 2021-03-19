@@ -11,7 +11,9 @@ import 'swiper/swiper-bundle.css'
 // import 'swiper/dist/css/swiper.css'
 import axios from 'axios'
 import store from './store/store'
+import LyTab from 'ly-tab'
 
+Vue.use(LyTab)
 Vue.use(Vant);
 Vue.use(VueAwesomeSwiper)
 Vue.prototype.$axios = axios

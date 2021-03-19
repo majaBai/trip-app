@@ -76,9 +76,9 @@ export default {
           let elementAlph = this.$refs[this.currentLetter]
           let elementCurrent = this.$refs.current
           let elementHot = this.$refs.hot
-          console.log('elementAlph[0]', elementAlph[0])
           if(elementAlph){
               let element = elementAlph[0]
+             console.log('element', element)
               console.log('this.scroll', this.scroll)
             //   debugger;
               this.scroll.scrollToElement(element)
@@ -104,7 +104,7 @@ export default {
   },
   mounted(){
       let that = this
-      console.log('betterScroll mounted', BetterScroll)
+    //   console.log('betterScroll mounted', BetterScroll, that.scroll)
     //   this.$nextTick(()=>{
     //       that.scroll = new BetterScroll(that.$refs.locationWrapper, {
     //         click: true,
@@ -116,9 +116,8 @@ export default {
     //        }
     //      )
     //   })
-
       setTimeout(()=>{
-           that.scroll = new BetterScroll('.scrollWrapper', {
+           that.scroll = new BetterScroll(that.$refs.locationWrapper, {
             click: true,
              mouseWheel:{
                 speed: 20,
@@ -127,7 +126,7 @@ export default {
               }
            }
          )
-      }, 16)
+      }, 500)
   },
 
   created() {

@@ -3,7 +3,12 @@
     <div class="title" :class="{ fixedDuringScroll: fixedDuringScroll }">
       <div class="name">猜你喜欢</div>
     </div>
-    <div v-for="item in guessList" :key="item.id" class="projects-list">
+    <div 
+    v-for="item in guessList" 
+    :key="item.id" 
+    class="projects-list"
+    @click='intoDetail(item.id)'
+    >
       <div class="projects-list-content">
         <img :src="item.img" alt="" />
         <div class="comment">{{ item.comment }}</div>
@@ -46,6 +51,9 @@ export default {
         this.fixedDuringScroll = false;
       }
     },
+    intoDetail(id){
+      this.$router.push(`/detail/${id}`)
+    }
   },
   mounted() {
     window.addEventListener("scroll", this.watchScroll);

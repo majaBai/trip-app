@@ -35,7 +35,7 @@ export default {
 
    },
    initLocationPage(result){
-     console.log('location data:', result.data)
+    //  console.log('location data:', result.data)
      let data = result.data
      this.hotCity = data.hotCity
      this.cityList = data.cityList
