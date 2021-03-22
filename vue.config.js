@@ -1,7 +1,8 @@
 const path = require('path')
 
 module.exports = {
-
+    // runtimerCompiler: true,
+    runtimeCompiler: true,
     devServer: {
         proxy: {
             '/api': {

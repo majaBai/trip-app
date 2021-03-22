@@ -6,6 +6,7 @@ import Home from '@/page/home/Home.vue'
 import Location from '@/page/location/Location.vue'
 import Detail from '@/page/detail/detail.vue'
 import Galary from '@/page/detail/components/galary.vue'
+import MapContent from '@/page/detail/components/MapContent.vue'
 
 export default new VueRouter({
     mode: 'history',
@@ -29,6 +30,10 @@ export default new VueRouter({
                 path:'galary',
                 component: Galary
 
+                },
+                {
+                    path:'map',
+                    component: MapContent
                 }
             ]
         },

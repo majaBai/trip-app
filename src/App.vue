@@ -21,13 +21,14 @@ export default {
         }
     }
   },
-  async mounted(){
-    let that = this
-    let Bmap = await loadBMap(that.$AK)
-    // console.log('Bmap', Bmap)
-    let myCity = new Bmap.LocalCity();
-    myCity.get(that.getCurrentCity);
-  }
+  // async mounted(){
+  //   let that = this
+  //   let Bmap = await loadBMap(that.$AK)
+  //   this.$store.state.Bmap=Bmap
+  //   console.log('Bmap in app',  this.$store.state.Bmap)
+  //   let myCity = new Bmap.LocalCity();
+  //   myCity.get(that.getCurrentCity);
+  // }
 };
 </script>
 

@@ -173,7 +173,7 @@ export default {
 }
 .swiper-img-box{
     height: 4rem;
-    margin-top: 4.3rem;
+    margin-top: 1rem;
     position: relative;
 }
 .swiper-img{
@@ -183,6 +183,8 @@ export default {
     left: 0.2rem;
 }
 .swiper-page{
+    text-align: center;
+    margin-top: 3.2rem
   
 }
 
