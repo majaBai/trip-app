@@ -9,7 +9,6 @@
             <img class='content-image' :src="item.url" >
         </div>
     </div>
-    <!-- 下面也应该拆分成一个组件 -->
   <div class='swiper-galary' v-show='showSwiper'>
       <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide
@@ -50,98 +49,100 @@ export default {
         // direction: "horizontal",
         initialSlide: 2,
     },
-     galaryList:[
-         [
-             {
-             id:0,
-             url:'https://dimg06.c-ctrip.com/images/fd/tg/g4/M01/4A/BF/CggYHVXjzyeAOeymABuBTaHIgFc792_C_1000_560_Q80.jpg'
-            },
+    //  galaryList:[
+    //      [
+    //          {
+    //          id:0,
+    //          url:'https://dimg06.c-ctrip.com/images/fd/tg/g4/M01/4A/BF/CggYHVXjzyeAOeymABuBTaHIgFc792_C_1000_560_Q80.jpg'
+    //         },
             
-            {
-             id:1,
-             url:'https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg'
-            },
+    //         {
+    //          id:1,
+    //          url:'https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg'
+    //         },
             
-            {
-             id:2,
-             url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
-            },
-            {
-             id:3,
-             url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
-            }
+    //         {
+    //          id:2,
+    //          url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:3,
+    //          url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
+    //         }
             
-         ],
-         [
-             {
-             id:0,
-             url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
-            },
-            {
-             id:1,
-             url:'https://dimg07.c-ctrip.com/images/100d0h0000008s394800B_C_1000_560_Q80.jpg'
-            },
-            {
-             id:2,
-             url:'https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg'
-            },
-         ],
-         [
-             {
-             id:0,
-             url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
-            },
-            {
-             id:1,
-             url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
-            }
-         ],
-         [
-             {
-             id:0,
-             url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
-            },
-            {
-             id:1,
-             url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
-            }
-         ],
-         [
-             {
-             id:0,
-             url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
-            },
-            {
-             id:1,
-             url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
-            }
-         ],
-        [
-             {
-             id:0,
-             url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
-            },
-            {
-             id:1,
-             url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
-            },
-         ]
-     ]
+    //      ],
+    //      [
+    //          {
+    //          id:0,
+    //          url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:1,
+    //          url:'https://dimg07.c-ctrip.com/images/100d0h0000008s394800B_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:2,
+    //          url:'https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg'
+    //         },
+    //      ],
+    //      [
+    //          {
+    //          id:0,
+    //          url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:1,
+    //          url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
+    //         }
+    //      ],
+    //      [
+    //          {
+    //          id:0,
+    //          url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:1,
+    //          url:'https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg'
+    //         }
+    //      ],
+    //      [
+    //          {
+    //          id:0,
+    //          url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:1,
+    //          url:'https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg'
+    //         }
+    //      ],
+    //     [
+    //          {
+    //          id:0,
+    //          url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
+    //         },
+    //         {
+    //          id:1,
+    //          url:'https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg'
+    //         },
+    //      ]
+    //  ]
          
     }
   },
   computed:{
-    
+    galaryList(){
+        return this.$store.state.galaryList
+    }
   },
   methods: {
     handleImgClick(id){
-        console.log('this.currentTabIndex',this.currentTabIndex)
-        console.log('点击第几张', id)
+        // console.log('this.currentTabIndex',this.currentTabIndex)
+        // console.log('点击第几张', id)
         this.currentPage = id
         this.swiperTotalPage = this.galaryList[this.currentTabIndex].length
         this.showSwiper = true
         this.$refs.mySwiper.swiper.slideTo(id)
-        console.log('this.showSwiper', this.showSwiper, 'this.swiperTotalPage', this.swiperTotalPage)
+        // console.log('this.showSwiper', this.showSwiper, 'this.swiperTotalPage', this.swiperTotalPage)
     },
     closeImgSwiper(){
         this.showSwiper = false

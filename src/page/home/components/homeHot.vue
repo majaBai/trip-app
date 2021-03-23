@@ -5,9 +5,9 @@
       <div class="left-title">
         <div class="limit">限时抢购</div>
         <div class="end-time">
-          距结束 <span class="timer-style">10</span>:<span class="timer-style"
-            >20</span
-          >:<span class="timer-style">40</span>
+          距结束 <span class="timer-style">{{hours}}</span>:<span class="timer-style"
+            >{{minutes}}</span
+          >:<span class="timer-style">{{seconds}}</span>
         </div>
       </div>
       <div class="left-content">
@@ -36,7 +36,7 @@
         class="right-content"
         v-for="(item, index) in hotList"
         :key="item.id"
-        :class="{ 'has-border': index + 1 < flashSaleList.length }"
+        :class="{ 'has-border': index + 1 < hotList.length }"
       >
         <div class="decs">
           {{ item.title }}
@@ -61,11 +61,43 @@ export default {
       type:Array
     },
   },
+ 
   data() {
     return {
-      
+      hours: '00',
+      minutes:'00',
+      seconds:'00',
+      total: 12, // 12小时
     };
   },
+  methods:{
+    countDown(){
+      let leftTime = this.total * 60 * 60 *1000
+      let timer
+      let that = this
+      if(leftTime){
+           timer = setInterval(()=>{
+           that.hours = that.formateTime(Math.floor((leftTime / 1000 / 60 / 60)%24))
+           that.minutes = that.formateTime(Math.floor((leftTime/1000/60)%60))
+           that.seconds = that.formateTime(Math.floor((leftTime/1000)%60))
+           leftTime -= 1000
+        }, 1000)
+      } else{
+        clearInterval(timer)
+      }
+    },
+    formateTime(val){
+      if(val < 10){
+        val = '0' + val
+      }
+      return val
+    }
+  },
+
+  created(){
+    this.countDown()
+
+  }
 };
 </script>
 

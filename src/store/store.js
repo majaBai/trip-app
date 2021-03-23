@@ -6,7 +6,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         currentCity: '北京',
-        Bmap:null
+        // Bmap:null,
+        galaryTabName:[],
+        galaryList:[],
+        addressList:[[{}]]
     },
     getters:{
        

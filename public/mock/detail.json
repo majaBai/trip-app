@@ -1,0 +1,133 @@
+{
+    "detailSwiperList":[
+        {
+          "id":"00001",
+          "url":"https://pic5.40017.cn/02/000/02/22/rBLkCVlkdDqAP4NzAAMCZSYX5mY633_420x228_00.jpg",
+          "date":"2天一晚",
+          "number":"编号：101453",
+          "page":"150张"
+  
+        },
+        {
+          "id":"00002",
+          "url":"https://pic3.40017.cn/zzy/rimage/2015/03/17/11/506Nl6_420x228_00.jpg",
+          "date":"2天一晚",
+          "number":"编号：101453",
+          "page":"150张"
+  
+        }
+      ],
+      "comment":[
+          "客栈位于景区内",
+          "入住期间可以无限次赏玩拈花小镇",
+          "客栈背靠灵山大佛，远离尘嚣"
+        ],
+      "galaryTabName":[
+        "无锡拈花客栈",
+        "无锡拈花客栈",
+        "无锡拈花客栈",
+        "无锡拈花客栈",
+        "无锡拈花客栈",
+        "无锡拈花客栈"
+      ],
+      "galaryList":[
+        [
+            {
+            "id":0,
+            "url":"https://dimg06.c-ctrip.com/images/fd/tg/g4/M01/4A/BF/CggYHVXjzyeAOeymABuBTaHIgFc792_C_1000_560_Q80.jpg"
+           },
+           
+           {
+            "id":1,
+            "url":"https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg"
+           },
+           
+           {
+            "id":2,
+            "url":"https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":3,
+            "url":"https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg"
+           }
+           
+        ],
+        [
+            {
+            "id":0,
+            "url":"https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":1,
+            "url":"https://dimg07.c-ctrip.com/images/100d0h0000008s394800B_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":2,
+            "url":"https://dimg07.c-ctrip.com/images/fd/tg/g2/M09/8E/2A/Cghzf1WxCriAW4dXABSVU-vqayI115_C_1000_560_Q80.jpg"
+           }
+        ],
+        [
+            {
+            "id":0,
+            "url":"https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":1,
+            "url":"https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg"
+           }
+        ],
+        [
+            {
+            "id":0,
+            "url":"https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":1,
+            "url":"https://dimg04.c-ctrip.com/images/100o1f000001gp41vC05F_C_1000_560_Q80.jpg"
+           }
+        ],
+        [
+            {
+            "id":0,
+            "url":"https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":1,
+            "url":"https://dimg02.c-ctrip.com/images/100v0u000000jeoiuAC5F_C_1000_560_Q80.jpg"
+           }
+        ],
+       [
+            {
+            "id":0,
+            "url":"https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg"
+           },
+           {
+            "id":1,
+            "url":"https://dimg06.c-ctrip.com/images/10030z000000mizq0E4B1_C_1000_560_Q80.jpg"
+           }
+        ]
+    ],
+    "addressList":[
+        [
+            {
+            "name":"无锡拈花客栈",
+            "id": 0,
+            "address":"无锡滨湖区马山环山西路68号"
+
+        },
+        {
+            "name":"无锡拈花湾拈花客栈",
+            "id": 1,
+            "address":"滨湖区马山灵山路"
+
+        }
+        ],
+        [
+            {
+            "name": "拈花湾景区",
+            "id":0,
+            "address":"马山环山西路68号"
+        }
+        ]
+    ]
+}

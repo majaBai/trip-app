@@ -2,9 +2,7 @@
   <div class="comment">
       <div class='tittle'><van-icon class="good-job" name="good-job" />推荐理由</div>
       <ul class='content'>
-          <li>客栈位于景区内</li>
-          <li>入住期间可以无限次赏玩拈花小镇</li>
-          <li>客栈背靠灵山大佛，远离尘嚣</li>
+          <li v-for="txt in comment" :key='txt'>{{txt}}</li>
       </ul>
   </div>
 </template>
@@ -13,6 +11,11 @@
 export default {
   name: "detailComment",
   components: {
+  },
+  props:{
+      comment:{
+          type:Array
+      }
   },
   data(){
     return{

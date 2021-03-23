@@ -28,14 +28,14 @@ export default {
     return{
       selectedId: 0,
       tabItems: [],
-      tabName:[
-        '无锡拈花客栈',
-        '无锡拈花客栈',
-        '无锡拈花客栈',
-        '无锡拈花客栈',
-        '无锡拈花客栈',
-        '无锡拈花客栈'
-      ],
+      // galaryTabName:[
+      //   '无锡拈花客栈',
+      //   '无锡拈花客栈',
+      //   '无锡拈花客栈',
+      //   '无锡拈花客栈',
+      //   '无锡拈花客栈',
+      //   '无锡拈花客栈'
+      // ],
       options: {
         activeColor: '#1d98bd'
         // 可在这里指定labelKey为你数据里文字对应的字段
@@ -46,7 +46,9 @@ export default {
     }
   },
   computed:{
-    
+    galaryTabName(){
+      return this.$store.state.galaryTabName
+    }
   },
   methods: {
     changeTab(item, indx){
@@ -57,8 +59,8 @@ export default {
       this.currentSubSelect = flag
     },
     creatTabs(){
-      for(let i = 0; i < this.tabName.length; i++){
-        let name = this.tabName[i]
+      for(let i = 0; i < this.galaryTabName.length; i++){
+        let name = this.galaryTabName[i]
         let obj = {
           label: name
         }

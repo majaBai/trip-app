@@ -59,6 +59,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
 }
 .tittle{
    padding-top: 0.1rem;

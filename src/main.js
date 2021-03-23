@@ -13,25 +13,18 @@ import axios from 'axios'
 import store from './store/store'
 import LyTab from 'ly-tab'
 // import loadBMap from './loadBMap/loadBMap'
-import BaiduMap from 'vue-baidu-map'
+// import BaiduMap from 'vue-baidu-map'
 
 Vue.use(LyTab)
 Vue.use(Vant);
 Vue.use(VueAwesomeSwiper)
 Vue.prototype.$axios = axios
 // 引入百度地图需要的 AK
-Vue.prototype.$AK = 'mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et'
-Vue.use(BaiduMap, {
-  ak: 'mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et'    //这个地方是官方提供的ak密钥
-})
+// Vue.prototype.$AK = 'mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et'
+// Vue.use(BaiduMap, {
+//   ak: 'mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et'    //这个地方是官方提供的ak密钥
+// })
 FastClick.attach(document.body);
-
-// async function saveBmap(AK){
-//   let bmap = await loadBMap(AK)
-//   Vue.prototype.$Bmap = bmap
-// }
-
-// saveBmap('mq0sQRMYdOXsTbGeSAs2he5ATY0hd0Et')
 
 Vue.config.productionTip = false
 

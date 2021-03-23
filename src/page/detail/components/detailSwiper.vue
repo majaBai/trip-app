@@ -4,7 +4,7 @@
     to="galary" append>
       <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide 
-      v-for="item in swiperList" 
+      v-for="item in detailSwiperList" 
       :key="item.id"
       >
         <div class='img-wrapper'>
@@ -27,6 +27,11 @@ export default {
   name: "detailSwiper",
   components: {
   },
+  props:{
+    detailSwiperList:{
+      type: Array
+    }
+  },
   data(){
     return{
       swiperOptions: {
@@ -37,24 +42,24 @@ export default {
         // direction: "vertical",
         loop: true,
       },
-    swiperList:[
-      {
-        id:'00001',
-        url:'https://pic5.40017.cn/02/000/02/22/rBLkCVlkdDqAP4NzAAMCZSYX5mY633_420x228_00.jpg',
-        date:'2天一晚',
-        number:'编号：101453',
-        page:'150张'
+    // detailSwiperList:[
+    //   {
+    //     id:'00001',
+    //     url:'https://pic5.40017.cn/02/000/02/22/rBLkCVlkdDqAP4NzAAMCZSYX5mY633_420x228_00.jpg',
+    //     date:'2天一晚',
+    //     number:'编号：101453',
+    //     page:'150张'
 
-      },
-      {
-        id:'00002',
-        url:'https://pic3.40017.cn/zzy/rimage/2015/03/17/11/506Nl6_420x228_00.jpg',
-        date:'2天一晚',
-        number:'编号：101453',
-        page:'150张'
+    //   },
+    //   {
+    //     id:'00002',
+    //     url:'https://pic3.40017.cn/zzy/rimage/2015/03/17/11/506Nl6_420x228_00.jpg',
+    //     date:'2天一晚',
+    //     number:'编号：101453',
+    //     page:'150张'
 
-      },
-    ]
+    //   },
+    // ]
     }
   },
   computed:{

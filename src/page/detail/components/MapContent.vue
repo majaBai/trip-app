@@ -43,7 +43,6 @@
 
 <script>
 import popUp from './popUp.vue'
-import loadBMap from '@/loadBMap/loadBMap'
 import makerImg from '@/assets/img/marker.png'
 
 export default {
@@ -65,34 +64,36 @@ export default {
           activeColor: '#1d98bd'
       },
       currentTab: 0,
-      addressList:[
-          [
-              {
-              name:'无锡拈花客栈',
-              id: 0,
-              address:'无锡滨湖区马山环山西路68号'
+    //   addressList:[
+    //       [
+    //           {
+    //           name:'无锡拈花客栈',
+    //           id: 0,
+    //           address:'无锡滨湖区马山环山西路68号'
 
-          },
-          {
-              name:'无锡拈花湾拈花客栈',
-              id: 1,
-              address:'滨湖区马山灵山路'
+    //       },
+    //       {
+    //           name:'无锡拈花湾拈花客栈',
+    //           id: 1,
+    //           address:'滨湖区马山灵山路'
 
-          },
-          ],
-          [
-              {
-              name: '拈花湾景区',
-              id:0,
-              address:'马山环山西路68号'
-          }
-          ]
-      ],
+    //       },
+    //       ],
+    //       [
+    //           {
+    //           name: '拈花湾景区',
+    //           id:0,
+    //           address:'马山环山西路68号'
+    //       }
+    //       ]
+    //   ],
      height: "60%"
     }
   },
   computed:{
-    
+    addressList(){
+        return this.$store.state.addressList
+    }
   },
   methods: {
     changeTab(){
@@ -101,81 +102,45 @@ export default {
     changeHeight(height){
         this.height = height
     },
-    // addMasker(m, n){
-    //     let that = this
-    //     console.log('addMasker', this.Bmap)
-    //     let map = new that.Bmap.Map(this.$refs.allMap)
-    //     let address = this.addressList[m][n].address
-    //     map.enableScrollWheelZoom(true)
-        
-    //     let myGeo = new that.Bmap.Geocoder();
-    //     for(let i = 0 ; i < this.addressList.length; i++){
-    //         for(let j = 0; j < this.addressList[i].length; j++){
-    //             myGeo.getPoint( this.addressList[i][j].address, function(point){
-    //                 console.log('point', point)
-    //                 if(point){
-    //                     map.centerAndZoom(point, 16);
-    //                     if(i===m&&j===n){
-    //                     //当前位置（默认this.addressList[0][0]）添加特殊 marker : makerImg
-    //                     console.log('添加特殊marker', i, j)
-    //                         let myIcon = new that.Bmap.Icon(makerImg, new that.Bmap.Size(50,50), {imageOffset: new that.Bmap.Size(14, 2)})
-    //                         map.addOverlay(new that.Bmap.Marker(point, {
-    //                             icon: myIcon
-    //                         }))
-    //                     // 添加信息窗口
-    //                     // InfoWindow(“信息内容”， {width: xxpx, height: xxpx, title: '信息窗口标题'})
-    //                     let infoWindow = new that.Bmap.InfoWindow(that.addressList[i][j].address, {
-    //                         title:that.addressList[i][j].name
-    //                     }); 
-    //                     map.openInfoWindow(infoWindow, map.getCenter());
-    //                     }else{
-    //                     //添加 marker
-    //                         map.addOverlay(new that.Bmap.Marker(point))
-    //                     }
-                       
-    //                 } else {
-    //                     alert('您选择的地址没有解析到结果！');
-    //                 }
-    //             })
-    //         }
-    //     }
-    // },
     changeAddress(id){
         console.log('this.currentTab', this.currentTab, 'id', id)
         this.addMasker(this.currentTab, id)
     },
+    addspecialMasker(i, j, point, map){
+        //当前位置（默认this.addressList[0][0]）添加特殊 marker : makerImg
+         let that = this
+        console.log('添加特殊marker', i, j)
+        let myIcon = new BMapGL.Icon(makerImg, new BMapGL.Size(20,20), {imageOffset: new BMapGL.Size(0, 0)})
+        map.addOverlay(new BMapGL.Marker(point, {
+            icon: myIcon
+        }))
+        // 添加信息窗口
+        // InfoWindow(“信息内容”， {width: xxpx, height: xxpx, title: '信息窗口标题'})
+        let infoWindow = new BMapGL.InfoWindow(that.addressList[i][j].address, {
+            title:that.addressList[i][j].name
+        }); 
+        map.openInfoWindow(infoWindow, map.getCenter());
+    },
     addMasker(m,n){
-     let that = this
-        console.log('addMasker', BMapGL)
+        // console.log('addMasker', BMapGL)
+        console.log('this.addressList', this.addressList[0], this.$store.state.addressList)
         let map = new BMapGL.Map(this.$refs.allMap)
         let address = this.addressList[m][n].address
         map.enableScrollWheelZoom(true)
         
+        let that = this
         let myGeo = new BMapGL.Geocoder();
         for(let i = 0 ; i < this.addressList.length; i++){
             for(let j = 0; j < this.addressList[i].length; j++){
                 myGeo.getPoint( this.addressList[i][j].address, function(point){
-                    console.log('point', point)
                     if(point){
                         map.centerAndZoom(point, 16);
                         if(i===m&&j===n){
-                        //当前位置（默认this.addressList[0][0]）添加特殊 marker : makerImg
-                        console.log('添加特殊marker', i, j)
-                            let myIcon = new BMapGL.Icon(makerImg, new BMapGL.Size(20,20), {imageOffset: new BMapGL.Size(0, 0)})
-                            map.addOverlay(new BMapGL.Marker(point, {
-                                icon: myIcon
-                            }))
-                        // 添加信息窗口
-                        // InfoWindow(“信息内容”， {width: xxpx, height: xxpx, title: '信息窗口标题'})
-                        let infoWindow = new BMapGL.InfoWindow(that.addressList[i][j].address, {
-                            title:that.addressList[i][j].name
-                        }); 
-                        map.openInfoWindow(infoWindow, map.getCenter());
+                           that.addspecialMasker(i, j, point, map)
                         }else{
                         //添加 marker
                             map.addOverlay(new BMapGL.Marker(point))
                         }
-                       
                     } else {
                         alert('您选择的地址没有解析到结果！');
                     }
@@ -184,19 +149,7 @@ export default {
         }
     },
   },
-//   async mounted(){
-//     let that = this
-//     if(this.$store.state.Bmap){
-//         this.Bmap = this.$store.state.Bmap
-//     }else{
-//         let Bmap = await loadBMap(that.$AK)
-//         this.$store.state.Bmap=Bmap
-//         this.Bmap = Bmap
-//         console.log('map', this.Bmap)
-//     }
-//     console.log('挂载mapContent', this.Bmap)
-//     this.addMasker(0, 0)
-//   },
+
 
 // 在 main.js 中全局引入BMap 
 mounted(){
@@ -204,6 +157,7 @@ mounted(){
     this.addMasker(0, 0)
 },
   created() {
+
   },
 };
 </script>
@@ -211,7 +165,7 @@ mounted(){
 <style scoped>
 .mapContent{
     background: white;
-        width: 100%;
+    width: 100%;
     bottom: 0;
     position: absolute;
     left: 0;
@@ -253,17 +207,6 @@ mounted(){
     background-color: #eee !important
 }
 
-/* .BMap_top {
-    display: none;
-}
-        
-.BMap_bottom {
-    display: none;
-}
-
-.BMap_center {
-    display: none;
-} */
 
 /* .BMap_pop:nth-child(1) div{
     display: none;
